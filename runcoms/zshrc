@@ -12,3 +12,30 @@ fi
 
 # Customize to your needs...
 
+# I like my case-semi-sensitive completion better
+zstyle ':completion:*:complete:*' matcher-list 'm:{a-z}={A-Z}'
+
+WORDCHARS=''
+
+# History handling
+HISTFILE=~/.zshhistory
+HISTSIZE=6000
+SAVEHIST=5000
+HIST_IGNORE_SPACE=1
+
+# some piping shortcuts
+bindkey -s '^|l' " | less"                           # c-| l  pipe to less
+bindkey -s '^|g' ' | grep ""^[OD'                    # c-| g  pipe to grep
+bindkey -s '^|a' " | awk '{print $}'^[OD^[OD"        # c-| a  pipe to awk
+bindkey -s '^|s' ' | sed -e "s///g"^[OD^[OD^[OD^[OD' # c-| s  pipe to sed
+bindkey -s '^|w' " | wc -l"                          # c-| w  pipe to wc
+
+[[ -s $HOME/.localrc ]] && source $HOME/.localrc
+
+function rehash () {
+    hash -r
+    hash -rd
+    [ -s $HOME/.local.hashes ] && source ~/.local.hashes
+}
+
+rehash
