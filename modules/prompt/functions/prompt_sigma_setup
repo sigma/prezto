@@ -79,7 +79,7 @@ function prompt_sigma_setup {
   zstyle ':prezto:module:python:info:virtualenv' format '%F{cyan}(%v)'
 
   # Define prompts.
-  PROMPT='%F{cyan}${_prompt_sigma_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
+  PROMPT='%F{red}${SSH_TTY:+%n@%m:}%F{cyan}${_prompt_sigma_pwd}%f${git_info:+${(e)git_info[prompt]}}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
   RPROMPT='$python_info[virtualenv]${editor_info[overwrite]}%(?:: %F{red}⏎%f)${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
