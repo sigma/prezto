@@ -38,6 +38,8 @@ zstyle ':prezto:load' pmodule \
     'python' \
     'archive' \
     'homebrew' \
+    'ssh' \
+    'gpg' \
     'tmux' \
     'syntax-highlighting' \
     'prompt'
