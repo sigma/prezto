@@ -20,11 +20,12 @@ _ssh_agent_env="${_ssh_agent_env:-$TMPDIR/ssh-agent.env}"
 _ssh_agent_sock="$TMPDIR/ssh-agent.sock"
 
 # Start ssh-agent if not started.
-if [[ ! -S "$SSH_AUTH_SOCK" ]]; then
-  eval "$(ssh-agent | sed '/^echo /d' | tee "$_ssh_agent_env")"
-else
+if [[ -e "$_ssh_agent_env" ]]; then
   # Export environment variables.
   source "$_ssh_agent_env" 2> /dev/null
+fi
+if [[ ! -S "$SSH_AUTH_SOCK" ]]; then
+  eval "$(ssh-agent | sed '/^echo /d' | tee "$_ssh_agent_env")"
 fi
 
 # Create a persistent SSH authentication socket.
