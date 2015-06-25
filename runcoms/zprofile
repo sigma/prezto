@@ -17,9 +17,9 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
-export PAGER='less'
+export EDITOR=${EDITOR:-nano}
+export VISUAL=${VISUAL:-$EDITOR}
+export PAGER=${PAGER:-less}
 
 #
 # Language
@@ -86,3 +86,4 @@ export P4USER=hodiquey
 export P4CLIENT=hodiquey-tools
 
 export DOCKER_HOST=tcp://coreos:4243
+export FLEETCTL_ENDPOINT=http://coreos:4001
