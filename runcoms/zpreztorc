@@ -43,7 +43,8 @@ zstyle ':prezto:load' pmodule \
     'gpg' \
     'tmux' \
     'syntax-highlighting' \
-    'prompt'
+    'prompt' \
+    'bookmarks'
 
 #
 # Editor
