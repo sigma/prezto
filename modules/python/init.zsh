@@ -47,20 +47,20 @@ install_v_aliases() {
   alias v.lssitepackages=lssitepackages
 }
 
-# Load virtualenvwrapper into the shell session.
-if (( $+commands[pyenv-virtualenvwrapper_lazy] )); then
-  export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-  pyenv virtualenvwrapper_lazy && install_v_aliases
-elif (( $+commands[virtualenvwrapper_lazy.sh] )); then
-  # Set the directory where virtual environments are stored.
-  export WORKON_HOME="$HOME/.virtualenvs"
+# # Load virtualenvwrapper into the shell session.
+# if (( $+commands[pyenv-virtualenvwrapper_lazy] )); then
+#   export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+#   pyenv virtualenvwrapper_lazy && install_v_aliases
+# elif (( $+commands[virtualenvwrapper_lazy.sh] )); then
+#   # Set the directory where virtual environments are stored.
+#   export WORKON_HOME="$HOME/.virtualenvs"
 
-  # Disable the virtualenv prompt.
-  VIRTUAL_ENV_DISABLE_PROMPT=1
+#   # Disable the virtualenv prompt.
+#   VIRTUAL_ENV_DISABLE_PROMPT=1
 
-  source "$commands[virtualenvwrapper_lazy.sh]"
-  install_v_aliases
-fi
+#   source "$commands[virtualenvwrapper_lazy.sh]"
+#   install_v_aliases
+# fi
 
 #
 # Aliases
