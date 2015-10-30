@@ -59,7 +59,7 @@ elif (( $+commands[virtualenvwrapper_lazy.sh] )); then
   # Disable the virtualenv prompt.
   VIRTUAL_ENV_DISABLE_PROMPT=1
 
-  source "$commands[virtualenvwrapper.sh]"
+  source "$commands[virtualenvwrapper_lazy.sh]"
   install_v_aliases
 fi
 
