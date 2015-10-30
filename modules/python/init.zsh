@@ -50,8 +50,7 @@ install_v_aliases() {
 # Load virtualenvwrapper into the shell session.
 if (( $+commands[pyenv-virtualenvwrapper_lazy] )); then
   export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-  pyenv virtualenvwrapper_lazy
-  install_v_aliases
+  pyenv virtualenvwrapper_lazy && install_v_aliases
 elif (( $+commands[virtualenvwrapper_lazy.sh] )); then
   # Set the directory where virtual environments are stored.
   export WORKON_HOME="$HOME/.virtualenvs"
